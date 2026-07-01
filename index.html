@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzuki Promo Anelia - Promo Mobil Suzuki Terbaik</title>
+    <!-- Google Fonts & Font Awesome untuk Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- RESET & BASIC STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            background-color: #0b0c10;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- HEADER / NAVBAR --- */
+        header {
+            background-color: rgba(11, 12, 16, 0.95);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #e30613;
+        }
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #e30613;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        .nav-links a {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #e30613;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(11, 12, 16, 0.6), rgba(11, 12, 16, 0.9)), 
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeBQ9883HRbVZmoKhhTrdYvO3Yf1TlxxZ3-t_Z-Us-aA&s=10') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            margin-top: 60px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            animation: fadeInLeft 1s ease-in-out;
+        }
+        .hero h1 span {
+            color: #e30613;
+            display: block;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            color: #c5c6c7;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-promo {
+            background-color: #e30613;
+            color: #fff;
+            padding: 15px 35px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: transform 0.3s, background-color 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(227, 6, 19, 0.4);
+        }
+        .btn-promo:hover {
+            background-color: #b8050f;
+            transform: translateY(-3px);
+        }
+
+        /* --- PROMO CARS SECTION --- */
+        .promo-section {
+            padding: 80px 5%;
+            background-color: #1f2833;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #e30613;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .grid-cars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .car-card {
+            background-color: #0b0c10;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #45f3ff; /* Aksen warna modern */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(69, 243, 255, 0.2);
+        }
+        .car-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #222;
+        }
+        .car-info {
+            padding: 25px;
+            text-align: left;
+        }
+        .car-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .car-tagline {
+            color: #45f3ff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .car-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .btn-wa-card {
+            display: block;
+            text-align: center;
+            background-color: #25D366;
+            color: #fff;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .btn-wa-card:hover {
+            background-color: #128C7E;
+        }
+
+        /* --- FLOATING WHATSAPP BUTTON --- */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0b0c10;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #1f2833;
+            font-size: 0.9rem;
+            color: #c5c6c7;
+        }
+
+        /* --- ANIMASI --- */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">SUZUKI <span>ANELIA <span>PROMO <span>DUTA <span>CENDANA <span>ADIMANDIRI</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#promo">Daftar Promo</a></li>
+            <li><a href="https://wa.me/6285175134397" target="_blank">Kontak</a></li>
+        </ul>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <h1>Dapatkan Promo Terbaik <span>Suzuki Mobil</span> Bersama Anelia</h1>
+        <p>Proses cepat, data dibantu sampai approve, dan penawaran DP serta angsuran paling ringan khusus bulan ini, SUZUKI BOGOR.</p>
+        <a href="#promo" class="btn-promo">Lihat Promo Sekarang</a>
+    </section>
+
+    <!-- PROMO CARS SECTION -->
+    <section class="promo-section" id="promo">
+        <h2 class="section-title">Unit Promo Unggulan</h2>
+        
+        <div class="grid-cars">
+            <!-- Mobil 1: XL7 -->
+            <div class="car-card">
+                <!-- Ganti URL image di bawah dengan foto mobil asli jika sudah ada -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTsnaopxsvyCKT3IrbvIt_bu-TQML0QFqgmR8z9T6ncQ&s=10" alt="Suzuki XL7" class="car-img">
+                <div class="car-info">
+                    <div class="car-name">Suzuki XL7 Hybrid</div>
+                    <div class="car-tagline">The New Energy of SUV</div>
+                    <div class="car-price">DP Mulai Rp 20 Jutaan</div>
+                    <a href="https://wa.me/6285175134397?text=Halo%20Anelia,%20saya%20tertarik%20dengan%20promo%20Suzuki%20XL7" target="_blank" class="btn-wa-card">
+                        <i class="fab fa-whatsapp"></i> Tanya Promo / Brosur
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobil 2: Ertiga -->
+            <div class="car-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9VgOkGqi8SNSHU5OvoF7UgNJHI1Mh3-LAhP8ZgIgBjQ&s=10" alt="Suzuki Ertiga" class="car-img">
+                <div class="car-info">
+                    <div class="car-name">Ertiga Smart Hybrid</div>
+                    <div class="car-tagline">Kebanggaan Keluarga Modern</div>
+                    <div class="car-price">Angsuran Ringan Mulai 20 Jutaan</div>
+                    <a href="https://wa.me/6285175134397?text=Halo%20Anelia,%20saya%20tertarik%20dengan%20promo%20Suzuki%20Ertiga" target="_blank" class="btn-wa-card">
+                        <i class="fab fa-whatsapp"></i> Tanya Promo / Brosur
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobil 3: S-Presso -->
+            <div class="car-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSEyC95zkw5TKBGaUusAROeuAsupd3uVP77Ogmvc9_3A&s=10" alt="Suzuki Spresso" class="car-img">
+                <div class="car-info">
+                    <div class="car-name">Suzuki SPresso</div>
+                    <div class="car-tagline">Step Up your Game</div>
+                    <div class="car-price">Bunga 0% & Tenor Panjang</div>
+                    <a href="https://wa.me/6285175134397?text=Halo%20Anelia,%20saya%20tertarik%20dengan%20promo%20Suzuki%20Grand%20Vitara" target="_blank" class="btn-wa-card">
+                        <i class="fab fa-whatsapp"></i> Tanya Promo / Brosur
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6285175134397?text=Halo%20Anelia,%20saya%20ingin%20tanya%20promo%20mobil%20Suzuki" class="floating-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Suzuki Promo Anelia. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Website ini merupakan halaman pemasaran digital untuk penjualan mobil Suzuki.</p>
+    </footer>
+
+</body>
+</html>
